@@ -13,7 +13,7 @@ module.exports = function(app){
     //req = the actual requests
     //res = response we will send back
     //next = error handling
-    res.send(['water', 'cup', 'paper'])
+    res.send({message: 'hidden information'});
   });
   //requireSignin test whether the email and password is correct
   //then Authentication.signup provides you with the accompanying token

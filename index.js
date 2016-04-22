@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const router = require('./router');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 //DB Setup
 mongoose.connect('mongodb://admin:password@ds053218.mlab.com:53218/auth-express-react-webpack-redux')
@@ -19,6 +20,10 @@ const app = express();
 app.use(morgan('combined'));
   //bodyParser parses requests as JSON
 app.use(bodyParser.json({type:'*/*'}));
+  //cors is a middleware
+  //specifically to fix the CORS principle
+  //can add config to limit
+app.use(cors());
 router(app);
 
 //Server Setup
